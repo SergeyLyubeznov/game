@@ -35,6 +35,8 @@
 		2DDDF4551DBE9122008A9CA1 /* BNCRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDDF41F1DBE9122008A9CA1 /* BNCRouter.swift */; };
 		2DDDF4561DBE9122008A9CA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DDDF4221DBE9122008A9CA1 /* Assets.xcassets */; };
 		2DDDF4571DBE9122008A9CA1 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDDF4241DBE9122008A9CA1 /* GameScene.swift */; };
+		2DDDF45A1DBEB54B008A9CA1 /* MainShip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDDF4591DBEB54B008A9CA1 /* MainShip.swift */; };
+		2DDDF45C1DBEB5AE008A9CA1 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDDF45B1DBEB5AE008A9CA1 /* Engine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		2DDDF41F1DBE9122008A9CA1 /* BNCRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BNCRouter.swift; sourceTree = "<group>"; };
 		2DDDF4221DBE9122008A9CA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DDDF4241DBE9122008A9CA1 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		2DDDF4591DBEB54B008A9CA1 /* MainShip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainShip.swift; sourceTree = "<group>"; };
+		2DDDF45B1DBEB5AE008A9CA1 /* Engine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
 		2DF822221DBE8C37003D4EBF /* Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Game.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F83E6AD6920D1B0150EBBF4 /* Pods_Game.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Game.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B0802EF868BFAFCC3549E97 /* Pods-Game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Game.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Game/Pods-Game.debug.xcconfig"; sourceTree = "<group>"; };
@@ -226,6 +230,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		2DDDF4581DBEB4EB008A9CA1 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				2DDDF4591DBEB54B008A9CA1 /* MainShip.swift */,
+				2DDDF45B1DBEB5AE008A9CA1 /* Engine.swift */,
+			);
+			path = Nodes;
+			sourceTree = "<group>";
+		};
 		2DF822191DBE8C37003D4EBF = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +264,7 @@
 				2DDDF3DD1DBE9122008A9CA1 /* Controllers */,
 				2DDDF3D31DBE9122008A9CA1 /* Animations */,
 				2DDDF4231DBE9122008A9CA1 /* Scenes */,
+				2DDDF4581DBEB4EB008A9CA1 /* Nodes */,
 				2DDDF4201DBE9122008A9CA1 /* Models */,
 				2DDDF4251DBE9122008A9CA1 /* Views */,
 				2DDDF3E01DBE9122008A9CA1 /* Library */,
@@ -403,9 +417,11 @@
 				2DDDF4511DBE9122008A9CA1 /* UIViewController+Storyboards.swift in Sources */,
 				2DDDF44E1DBE9122008A9CA1 /* UIImageView+Model.swift in Sources */,
 				2DDDF4531DBE9122008A9CA1 /* Utils.swift in Sources */,
+				2DDDF45A1DBEB54B008A9CA1 /* MainShip.swift in Sources */,
 				2DDDF4281DBE9122008A9CA1 /* AppDelegate.swift in Sources */,
 				2DDDF42E1DBE9122008A9CA1 /* BaseViewController + ActivityIndicator.swift in Sources */,
 				2DDDF44F1DBE9122008A9CA1 /* UIScrollView+Utils.swift in Sources */,
+				2DDDF45C1DBEB5AE008A9CA1 /* Engine.swift in Sources */,
 				2DDDF44C1DBE9122008A9CA1 /* UIColor+Utils.swift in Sources */,
 				2DDDF44B1DBE9122008A9CA1 /* TintedButton.swift in Sources */,
 				2DDDF4491DBE9122008A9CA1 /* NSObject+Xib.swift in Sources */,

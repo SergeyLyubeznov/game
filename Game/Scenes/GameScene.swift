@@ -13,7 +13,7 @@ class GameScene: SKScene {
     
     fileprivate var label : SKLabelNode?
     fileprivate var spinnyNode : SKShapeNode?
-    fileprivate var ship:SKSpriteNode?
+    fileprivate var ship:MainShip?
     
     override func didMove(to view: SKView) {
         
@@ -37,20 +37,19 @@ class GameScene: SKScene {
                                               SKAction.removeFromParent()]))
         }
         
-        //add ship
+        createMainShip()
         
-        let ship:SKSpriteNode = (self.childNode(withName: "//ship") as? SKSpriteNode)!
-        let engineOne:SKSpriteNode = (self.childNode(withName: "//engine_fire1") as? SKSpriteNode)!
-        let engineTwo:SKSpriteNode = (self.childNode(withName: "//engine_fire2") as? SKSpriteNode)!
-        addActionsToEngines(engines: [engineOne,engineTwo])
-        self.ship = ship
-        
-        }
+    }
     
-    private func addActionsToEngines(engines:[SKSpriteNode]) {
-        for engine in engines {
-            engine.run(SKAction.repeatForever(SKAction(named: "Pulse1")!))
-        }
+    private func createMainShip() {
+        
+        let ship:MainShip = self.childNode(withName: "//ship") as! MainShip
+        let leftEngine:Engine = (self.childNode(withName: "//engine_fire1") as? Engine)!
+        let rifghtEngine:Engine = (self.childNode(withName: "//engine_fire2") as? Engine)!
+        ship.leftEngine = leftEngine
+        ship.rifghtEngine = rifghtEngine
+        
+        self.ship = ship
     }
 
     func touchDown(atPoint pos : CGPoint) {
