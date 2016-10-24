@@ -40,9 +40,18 @@ class GameScene: SKScene {
         //add ship
         
         let ship:SKSpriteNode = (self.childNode(withName: "//ship") as? SKSpriteNode)!
+        let engineOne:SKSpriteNode = (self.childNode(withName: "//engine_fire1") as? SKSpriteNode)!
+        let engineTwo:SKSpriteNode = (self.childNode(withName: "//engine_fire2") as? SKSpriteNode)!
+        addActionsToEngines(engines: [engineOne,engineTwo])
         self.ship = ship
         
         }
+    
+    private func addActionsToEngines(engines:[SKSpriteNode]) {
+        for engine in engines {
+            engine.run(SKAction.repeatForever(SKAction(named: "Pulse1")!))
+        }
+    }
 
     func touchDown(atPoint pos : CGPoint) {
         if let n = self.spinnyNode?.copy() as! SKShapeNode? {
