@@ -13,6 +13,7 @@ class GameScene: SKScene {
     
     fileprivate var label : SKLabelNode?
     fileprivate var spinnyNode : SKShapeNode?
+    fileprivate var ship:SKSpriteNode?
     
     override func didMove(to view: SKView) {
         
@@ -35,9 +36,14 @@ class GameScene: SKScene {
                                               SKAction.fadeOut(withDuration: 0.5),
                                               SKAction.removeFromParent()]))
         }
-    }
-    
-    
+        
+        //add ship
+        
+        let ship:SKSpriteNode = (self.childNode(withName: "//ship") as? SKSpriteNode)!
+        self.ship = ship
+        
+        }
+
     func touchDown(atPoint pos : CGPoint) {
         if let n = self.spinnyNode?.copy() as! SKShapeNode? {
             n.position = pos
@@ -52,6 +58,8 @@ class GameScene: SKScene {
             n.strokeColor = SKColor.blue
             self.addChild(n)
         }
+        
+        ship?.run(SKAction.moveTo(x:pos.x, duration: 0))
     }
     
     func touchUp(atPoint pos : CGPoint) {
@@ -71,6 +79,9 @@ class GameScene: SKScene {
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        
+        
         for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
     }
     
