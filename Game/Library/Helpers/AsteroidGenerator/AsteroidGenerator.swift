@@ -23,10 +23,11 @@ class AsteroidGenerator: NSObject {
         
         let asteroid:Asteroid = Asteroid.init()
         asteroid.texture = textureAt(type: type)
+        asteroid.name = "Asteroid"
         
         switch type {
         case .small:
-            asteroid.size = CGSize.init(width: 120, height: 120)
+            asteroid.size = CGSize.init(width: 180, height: 180)
             asteroid.hp = 21
             asteroid.score = 5
             break

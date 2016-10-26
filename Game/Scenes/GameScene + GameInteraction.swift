@@ -18,13 +18,21 @@ extension GameScene {
     
     private func checkAndRemoveBullets() {
         
-      let borderX = UIScreen.main.bounds.height
+      let borderY = UIScreen.main.bounds.height
         enumerateChildNodes(withName:"Photon") { (node, stop) in
             print(node.position.y)
-            if node.position.y - 50 > borderX {
+            if node.position.y - 50 > borderY {
+                node.removeFromParent()
+            }
+        }
+        
+        enumerateChildNodes(withName:"Asteroid") { (node, stop) in
+            print(node.position.y)
+            if node.position.y < -700 {
                 node.removeFromParent()
             }
         }
     }
+    
 }
 

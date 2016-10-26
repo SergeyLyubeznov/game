@@ -13,4 +13,11 @@ import GameKit
 class Asteroid: SKSpriteNode {
     var hp:Int?
     var score:Int?
+    private var deltaY:CGFloat = 50.0
+    
+    func fly() {
+        
+        run(SKAction.repeatForever(SKAction.moveBy(x: 0, y: -250 - deltaY, duration: 1)))
+    }
+    
 }
