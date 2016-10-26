@@ -11,9 +11,4 @@ import GameKit
 
 class Photon: SKSpriteNode {
     
-    override var position: CGPoint {
-        didSet{
-            print(position)
-        }
-    }
 }

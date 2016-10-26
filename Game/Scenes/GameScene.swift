@@ -13,7 +13,7 @@ class GameScene: SKScene {
     
     fileprivate var label : SKLabelNode?
     fileprivate var spinnyNode : SKShapeNode?
-    fileprivate var ship:MainShip?
+    internal var ship:MainShip?
     
     override func didMove(to view: SKView) {
         
@@ -37,20 +37,12 @@ class GameScene: SKScene {
                                               SKAction.removeFromParent()]))
         }
         
-        createMainShip()
+        creatGameZone()
+
     }
     
     func changeSpeed(string:String) {
         
-    }
-    
-    private func createMainShip() {
-        
-        let ship:MainShip = self.childNode(withName: "//ship") as! MainShip
-        ship.prepare()
-        ship.fire()
-        
-        self.ship = ship
     }
 
     func touchDown(atPoint pos : CGPoint) {

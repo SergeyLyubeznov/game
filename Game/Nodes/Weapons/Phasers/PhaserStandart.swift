@@ -24,13 +24,13 @@ class PhaserStandart: Weapon {
         photon = (self.childNode(withName: "//Photon") as? Photon)!
         photon?.isHidden = true
         isReady = true
-        speed = 20
+        speed = 1
         subscribeNotifications(enable: true)
     }
     
     override func fire() {
         
-        run(SKAction.repeatForever(SKAction.sequence([SKAction.wait(forDuration: 4),
+        run(SKAction.repeatForever(SKAction.sequence([SKAction.wait(forDuration: 1),
                                                       SKAction.perform(#selector(createPhoton),
                                                                     onTarget: self)])))
     }
