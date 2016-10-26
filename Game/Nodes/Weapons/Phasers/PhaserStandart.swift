@@ -42,10 +42,8 @@ class PhaserStandart: Weapon {
         let parentPoint = parent?.position
         point?.y = (point?.y)! + (parentPoint?.y)! + 50
         point?.x = (point?.x)! + (parentPoint?.x)!
-        
         p?.position = point!
-        p?.isHidden = false
-        p?.run(SKAction.repeatForever(SKAction.moveBy(x: 0, y: 250 + deltaY, duration: 1)))
+        p?.prepare()
         scene?.addChild(p!)
         
     }

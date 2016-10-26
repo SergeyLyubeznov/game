@@ -47,5 +47,6 @@ extension GameScene {
         addChild(asteroid)
         asteroid.fly()
     }
+    
 }
 

@@ -34,7 +34,7 @@ class AsteroidGenerator: NSObject {
         default:
             return asteroid
         }
-        
+        asteroid.prepare()
         return asteroid
     }
     

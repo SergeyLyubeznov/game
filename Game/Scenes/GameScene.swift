@@ -37,6 +37,9 @@ class GameScene: SKScene {
                                               SKAction.removeFromParent()]))
         }
         
+        physicsWorld.gravity = CGVector(dx: 0, dy: 0)
+        physicsWorld.contactDelegate = self
+        
         creatGameZone()
 
     }

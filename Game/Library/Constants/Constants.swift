@@ -51,4 +51,10 @@ struct Constants {
         }()
     }
     
+    struct NodeCategories {
+        static let Asteroid:UInt32 = 0b10
+        static let Photon:UInt32 = 0b1
+    }
+    
+    
 }

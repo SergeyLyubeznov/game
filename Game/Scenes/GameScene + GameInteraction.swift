@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-extension GameScene {
+extension GameScene:SKPhysicsContactDelegate {
     
     override func update(_ currentTime: TimeInterval) {
         
@@ -32,6 +32,24 @@ extension GameScene {
                 node.removeFromParent()
             }
         }
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+    
+        let firstNode = contact.bodyA.node as! SKSpriteNode
+        let secondNode = contact.bodyB.node as! SKSpriteNode
+        
+        if firstNode.name == "Photon" && secondNode.name == "Asteroid" {
+            contactAt(photon: firstNode as! Photon, and: secondNode as! Asteroid)
+        } else if firstNode.name == "Asteroid" && secondNode.name == "Photon" {
+            contactAt(photon: secondNode as! Photon, and: firstNode as! Asteroid)
+        }
+    }
+    
+    private func contactAt(photon:Photon, and asteroid:Asteroid) {
+        print("asteroid destroyed")
+        photon.removeFromParent()
+        asteroid.removeFromParent()
     }
     
 }
