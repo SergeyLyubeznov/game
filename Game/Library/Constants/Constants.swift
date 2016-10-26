@@ -13,39 +13,15 @@ struct Constants {
     struct API {
         static let clientId = "bamosMobile"
         static let clientPassword = "12345"
-//        static let BaseURL = "http://bamos-api.gdsln.com:8080/" //STAGE
-        static let BaseURL = "http://bamos-api.gdsln.com:33089/" //DEV
-        static let CheckUsernamePath = "user/isAvailable"
-        static let RegisterPath = "user/register"
-        static let TokenPath = "oauth/token"
-        static let TermsPath = "terms/"
-        static let LocationsListPath = "location/getAll"
-        static let EventsListPath = "event/getAll"
-        static let EventDetailsPath = "event/"
-        static let EventEditPath = "event/edit/"
-        static let EventFavoritesPath = "event/favor"
-        static let EventsListInCategoryPath = "event/getByCategory/"
-        static let EventsListForUserPath = "event/getByUser/"
-        static let UsersListPath = "user/getAll"
-        static let UserDetailsPath = "user/"
-        static let UserFavoritesPath = "user/favor"
-        static let FollowersPath = "user/follower"
-        static let FollowPath = "user/follow"
-        static let CategoriesListPath = "category/getAll"
-        static let DialoguesListPath = "conversation/"
-        static let UnreadMessagesCountPath = "conversation/unread"
-        static let MarkMessageAsReadPath = "message/id/read"
-        static let ProfilePath = "profile/"
-        static let TempVideoURL = "http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4"
-        static let ImageUploadPath = "uploadImage"
-        static let VideoUploadPath = ""
-        static let MessageNewPath = ""
-        static let RegisterFacebookUserPath = "user/registerFacebookAccount"
+//        static let BaseURL = "http://bamos-api.gdsln.com:8080/" //SvTAGE
+        static let BaseURL = "http://bamos-api.gdsln.com:33089/" //DE
         
     }
     
     struct Notifications {
         static let ProfileChanged = "kBamosNotificationProfileChanged"
+        static let SpeedChanged = "kGameNotificationSpeedChanged"
+        
     }
     
     struct Colors {

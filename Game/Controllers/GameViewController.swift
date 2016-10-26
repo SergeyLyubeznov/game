@@ -11,16 +11,24 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
-
+    
+    @IBOutlet weak var plus: UIButton!
+    
+    @IBAction func plus(_ sender: AnyObject) {
+        GameManager.sharedInstance.speedShoot += 50
+    }
+    @IBAction func minus(_ sender: AnyObject) {
+        GameManager.sharedInstance.speedShoot -= 50
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
+            if let scene:GameScene = SKScene(fileNamed: "GameScene") as? GameScene {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
-                
+                scene.zPosition = -1
                 // Present the scene
                 view.presentScene(scene)
             }

@@ -38,16 +38,17 @@ class GameScene: SKScene {
         }
         
         createMainShip()
+    }
+    
+    func changeSpeed(string:String) {
         
     }
     
     private func createMainShip() {
         
         let ship:MainShip = self.childNode(withName: "//ship") as! MainShip
-        let leftEngine:Engine = (self.childNode(withName: "//engine_fire1") as? Engine)!
-        let rifghtEngine:Engine = (self.childNode(withName: "//engine_fire2") as? Engine)!
-        ship.leftEngine = leftEngine
-        ship.rifghtEngine = rifghtEngine
+        ship.prepare()
+        ship.fire()
         
         self.ship = ship
     }
@@ -100,9 +101,5 @@ class GameScene: SKScene {
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         for t in touches { self.touchUp(atPoint: t.location(in: self)) }
     }
-    
-    
-    override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
-    }
+
 }
