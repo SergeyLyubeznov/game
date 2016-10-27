@@ -10,6 +10,8 @@ import UIKit
 import SpriteKit
 import GameKit
 
+let angles = [M_PI,M_PI_2,M_PI_4]
+
 class Asteroid: SKSpriteNode {
     
     var hp:Int?
@@ -34,6 +36,15 @@ class Asteroid: SKSpriteNode {
     }
     
     func fly() {
+        
+        let rand = (Int)(arc4random_uniform(3))
+        var angle = (CGFloat)(angles[rand])
+        
+        angle = arc4random_uniform(2) == 1 ? angle : angle * -1
+        
+        let duration = arc4random_uniform(3) + 1
+        
+        run(SKAction.repeatForever(SKAction.rotate(byAngle: angle, duration: (TimeInterval)(duration))))
         
         run(SKAction.repeatForever(SKAction.moveBy(x: 0, y: -250 - deltaY, duration: 1)))
     }
