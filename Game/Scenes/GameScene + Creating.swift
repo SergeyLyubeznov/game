@@ -28,14 +28,14 @@ extension GameScene {
     
     private func creatAsteroids() {
     
-        run(SKAction.repeatForever(SKAction.sequence([SKAction.wait(forDuration: 1),
+        run(SKAction.repeatForever(SKAction.sequence([SKAction.wait(forDuration: 0.5),
                                                       SKAction.perform(#selector(creatAsteroid),
                                                                        onTarget: self)])))
     }
     
     @objc private func creatAsteroid() {
         
-        let asteroid = AsteroidGenerator.asteroidAt(type: .small)
+        let asteroid = AsteroidGenerator.asteroidAt(type: AsteriodType(rawValue: arc4random_uniform(3))!)
         
         let borderY = UIScreen.main.bounds.height
         

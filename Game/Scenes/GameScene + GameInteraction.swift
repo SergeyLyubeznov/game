@@ -48,6 +48,8 @@ extension GameScene:SKPhysicsContactDelegate {
     
     private func contactAt(photon:Photon, and asteroid:Asteroid) {
         print("asteroid destroyed")
+        self.score = self.score + asteroid.score!
+        
         photon.removeFromParent()
         asteroid.removeFromParent()
     }

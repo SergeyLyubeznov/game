@@ -13,7 +13,7 @@ import GameKit
 class Asteroid: SKSpriteNode {
     
     var hp:Int?
-    var score:Int?
+    var score:UInt32?
     private var deltaY:CGFloat = 50.0
     
     func prepare() {
@@ -22,11 +22,10 @@ class Asteroid: SKSpriteNode {
     }
     
     private func enablePhysicsBody() {
+    
+        physicsBody = SKPhysicsBody.init(circleOfRadius: frame.size.width / 3 )
         
-        print(frame.size)
         
-        physicsBody = SKPhysicsBody(rectangleOf:
-            frame.size)
         physicsBody?.isDynamic = true
         physicsBody?.affectedByGravity = false
         physicsBody?.categoryBitMask = Constants.NodeCategories.Asteroid

@@ -18,14 +18,13 @@ class Photon: SKSpriteNode {
         isHidden = false
         zPosition = 0
         enablePhysicsBody()
-        run(SKAction.repeatForever(SKAction.moveBy(x: 0, y: 250 + deltaY!, duration: 1)))
+        run(SKAction.repeatForever(SKAction.moveBy(x: 0, y: 300 + deltaY!, duration: 1)))
     }
     
     private func enablePhysicsBody() {
         
         physicsBody = SKPhysicsBody(rectangleOf:
             frame.size)
-        print(frame.size)
         
         physicsBody?.isDynamic = true
         physicsBody?.affectedByGravity = false

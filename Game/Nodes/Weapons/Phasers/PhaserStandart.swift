@@ -24,13 +24,13 @@ class PhaserStandart: Weapon {
         photon = (self.childNode(withName: "//Photon") as? Photon)!
         photon?.isHidden = true
         isReady = true
-        speed = 1
+        speed = 10
         subscribeNotifications(enable: true)
     }
     
     override func fire() {
         
-        run(SKAction.repeatForever(SKAction.sequence([SKAction.wait(forDuration: 1),
+        run(SKAction.repeatForever(SKAction.sequence([SKAction.wait(forDuration: 4),
                                                       SKAction.perform(#selector(createPhoton),
                                                                     onTarget: self)])))
     }
@@ -43,6 +43,7 @@ class PhaserStandart: Weapon {
         point?.y = (point?.y)! + (parentPoint?.y)! + 50
         point?.x = (point?.x)! + (parentPoint?.x)!
         p?.position = point!
+        p?.deltaY = deltaY
         p?.prepare()
         scene?.addChild(p!)
         

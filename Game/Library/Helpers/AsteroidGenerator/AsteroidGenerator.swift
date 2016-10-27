@@ -9,13 +9,13 @@
 import UIKit
 import SpriteKit
 
-enum AsteriodType:String {
-    case small = "small"
-    case medium = "medium"
-    case large = "large"
+enum AsteriodType:UInt32 {
+    case small = 0
+    case medium = 1
+    case large = 2
 }
 
-let smallAsteriodName = "a"
+let asteriodName = "a"
 
 class AsteroidGenerator: NSObject {
 
@@ -27,12 +27,20 @@ class AsteroidGenerator: NSObject {
         
         switch type {
         case .small:
-            asteroid.size = CGSize.init(width: 180, height: 180)
-            asteroid.hp = 21
+            asteroid.size = CGSize.init(width: 120, height: 120)
+            asteroid.hp = 5
             asteroid.score = 5
             break
-        default:
-            return asteroid
+        case .medium:
+            asteroid.size = CGSize.init(width: 180, height: 180)
+            asteroid.hp = 10
+            asteroid.score = 10
+            break
+        case .large:
+            asteroid.size = CGSize.init(width: 240, height: 240)
+            asteroid.hp = 15
+            asteroid.score = 15
+            break
         }
         asteroid.prepare()
         return asteroid
@@ -41,16 +49,7 @@ class AsteroidGenerator: NSObject {
     class private func textureAt(type:AsteriodType) -> SKTexture {
         
         let randomNumber = arc4random_uniform(16) + 10000
-        print(randomNumber.description)
-        var imageName = ""
-        
-        if type == .small {
-            imageName = smallAsteriodName + randomNumber.description
-        } else if type == .medium {
-            
-        } else {
-            
-        }
+        let imageName = asteriodName + randomNumber.description
     
         return SKTexture.init(imageNamed:imageName)
     }
