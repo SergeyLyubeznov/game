@@ -26,8 +26,6 @@ class Asteroid: SKSpriteNode {
     private func enablePhysicsBody() {
     
         physicsBody = SKPhysicsBody.init(circleOfRadius: frame.size.width / 3 )
-        
-        
         physicsBody?.isDynamic = true
         physicsBody?.affectedByGravity = false
         physicsBody?.categoryBitMask = Constants.NodeCategories.Asteroid

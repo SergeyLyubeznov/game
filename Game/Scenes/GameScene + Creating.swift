@@ -39,9 +39,10 @@ extension GameScene {
         
         let borderY = UIScreen.main.bounds.height
         
-        let sign = arc4random_uniform(1) == 1 ? 1:-1
+        let sign = arc4random_uniform(2) == 1 ? 1:-1
         
         let spawnX =  (CGFloat)((Int)(arc4random_uniform(350)) * sign)
+        print("asteroid spawn X:%f",spawnX)
         
         asteroid.position = CGPoint(x:spawnX,y:borderY + 100)
         addChild(asteroid)
